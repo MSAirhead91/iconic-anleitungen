@@ -8,14 +8,14 @@
 .chapter ul { padding-left: 1.4rem; }
 .chapter li { margin: .1rem 0; }
 
-.chapter img[alt^="Einladungsdetails"] {
+.chapter img[data-shot="invitation"] {
 
 
 }
-.chapter img[alt^="Benutzerberechtigungen mit"] {
+.chapter img[data-shot="role"] {
   object-view-box: inset(0 0 940px);
 }
-.chapter img[alt^="PPC-Berechtigungen und"] {
+.chapter img[data-shot="permissions"] {
   object-view-box: inset(762px 0 0);
 }
 @media print {
@@ -53,10 +53,10 @@
    (1392 px) bestimmt den gemeinsamen responsiven Massstab.
    Breite = Quellbreite * (18 / Quellschriftgroesse) / 1392. */
 .chapter img:not(.print-mark) { max-height: none; }
-.chapter img[alt^="Einstellungen mit"] { width: 40.344828%; }
-.chapter img[alt^="Mitarbeiter verwalten"] { width: 100%; }
-.chapter img[alt^="Einladungsdetails"] { width: 88.433908%; }
-.chapter img[alt^="Benutzerberechtigungen mit"],
-.chapter img[alt^="PPC-Berechtigungen und"] { width: 72.701149%; }
+.chapter img[data-shot="settings"] { width: 40.344828%; }
+.chapter img[data-shot="employees"] { width: 100%; }
+.chapter img[data-shot="invitation"] { width: 88.433908%; }
+.chapter img[data-shot="role"],
+.chapter img[data-shot="permissions"] { width: 72.701149%; }
 /* Nur den Artefaktstreifen unter der vorhandenen Menuekante ausblenden. */
-.chapter img[alt^="Einstellungen mit"] { object-view-box: inset(0 0 3px); }
+.chapter img[data-shot="settings"] { object-view-box: inset(0 0 3px); }

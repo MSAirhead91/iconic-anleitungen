@@ -3,22 +3,22 @@
     <header class="viewer-header">
       <div class="viewer-heading">
         <p id="screenshot-viewer-title">Screenshot</p>
-        <button class="viewer-close" type="button" data-viewer="close" aria-label="Schließen" title="Schließen" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
+        <button class="viewer-close" type="button" data-viewer="close" aria-label="{{close}}" title="{{close}}" autofocus><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg></button>
       </div>
-      <div class="viewer-tools" role="group" aria-label="Bildansicht">
-        <div class="viewer-zoom-group" role="group" aria-label="Vergrößerung">
-          <button type="button" data-viewer="out" aria-label="Verkleinern">−</button>
-          <output aria-live="polite" aria-label="Vergrößerung">100 %</output>
-          <button type="button" data-viewer="in" aria-label="Vergrößern">+</button>
+      <div class="viewer-tools" role="group" aria-label="{{view}}">
+        <div class="viewer-zoom-group" role="group" aria-label="{{zoom}}">
+          <button type="button" data-viewer="out" aria-label="{{zoomOut}}">−</button>
+          <output aria-live="polite" aria-label="{{zoom}}">100 %</output>
+          <button type="button" data-viewer="in" aria-label="{{zoomIn}}">+</button>
         </div>
-        <div class="viewer-fit-group" role="group" aria-label="Bild anpassen">
-          <button type="button" data-viewer="fit" title="Bild an die verfügbare Breite anpassen">An Breite anpassen</button>
-          <button type="button" data-viewer="fit-page" title="Gesamten Screenshot im sichtbaren Bildbereich anzeigen">An Seite anpassen</button>
+        <div class="viewer-fit-group" role="group" aria-label="{{adjust}}">
+          <button type="button" data-viewer="fit" title="{{fitWidthTitle}}">{{fitWidth}}</button>
+          <button type="button" data-viewer="fit-page" title="{{fitViewTitle}}">{{fitView}}</button>
         </div>
       </div>
-      <p class="viewer-help">Zum Verschieben wischen oder scrollen.</p>
+      <p class="viewer-help">{{help}}</p>
     </header>
-    <div class="viewer-viewport" tabindex="0" aria-label="Screenshot: zum Verschieben wischen oder scrollen">
+    <div class="viewer-viewport" tabindex="0" aria-label="{{viewport}}">
       <div class="viewer-surface"><img class="viewer-image" alt=""></div>
     </div>
   </div>

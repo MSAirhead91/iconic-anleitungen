@@ -1,1 +1,20 @@
-[{"slug":"vendor-ppc","title":"Nutzer für PPC in Vendor Central hinzufügen","description":"ICONIC Zugriff für Vendor PPC einrichten.","source":"guides/vendor-ppc/Anleitung.md"}]
+[
+  {
+    "slug": "vendor-ppc",
+    "legacyPaths": [
+      "vendor-ppc"
+    ],
+    "versions": {
+      "de": {
+        "title": "Nutzer für PPC in Vendor Central hinzufügen",
+        "description": "ICONIC Zugriff für Vendor PPC einrichten.",
+        "source": "guides/vendor-ppc/de/Anleitung.md"
+      },
+      "en": {
+        "title": "Add a Vendor Central user for PPC",
+        "description": "Set up ICONIC access for Vendor PPC.",
+        "source": "guides/vendor-ppc/en/Anleitung.md"
+      }
+    }
+  }
+]
