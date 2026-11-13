@@ -168,6 +168,4 @@ main > nav a { min-width: 0; overflow-wrap: anywhere; }
 .cover-languages a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 @media print { .cover-languages { display: none; } .cover-top { padding: 0 12mm; } .cover-top .logo { width: 29mm; flex: none; } }
 .cover-navigation { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; flex: 0 0 auto; }
-.cover-catalog { display: inline-flex; align-items: center; min-height: 44px; font-size: .8rem; color: var(--brand); }
-.cover-catalog:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
 @media print { .cover-navigation { display: none; } }

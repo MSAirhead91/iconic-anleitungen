@@ -4,7 +4,7 @@ import { uiFor } from "./i18n.mjs";
 import { createRequire } from "node:module";
 import { pathToFileURL } from "node:url";
 
-const [input, output, moduleRoot, locale = "de", alternateHref = "", catalogHref = ""] = process.argv.slice(2);
+const [input, output, moduleRoot, locale = "de", alternateHref = ""] = process.argv.slice(2);
 const ui = uiFor(locale);
 if (!input || !output || path.resolve(input) === path.resolve(output)) {
   throw new Error("Aufruf: node render.mjs quelle.md anleitung.html [node_modules]");
@@ -87,7 +87,7 @@ const nav = chapters.map(({ label }, index) => '<a href="#abschnitt-' + (index+1
 const sections = chapters.map(({ label, tokens }, index) => '<section class="chapter" id="abschnitt-' + (index+1)
   + '"><img class="print-mark" src="' + logoUrl + '" alt=""><h2><a href="#titelseite" title="' + escape(ui.back) + '">' + escape(label) + '</a></h2>' + render(tokens) + '</section>').join("\n");
 const coverLanguages = alternateHref ? '<div class="cover-languages" role="navigation" aria-label="' + escape(ui.languages) + '">' + ['de', 'en'].map(code => '<a href="' + escape(code === locale ? '#titelseite' : alternateHref) + '" lang="' + code + '" hreflang="' + code + '" aria-label="' + (code === 'de' ? 'Deutsch' : 'English') + '"' + (code === locale ? ' aria-current="page"' : '') + '>' + code.toUpperCase() + '</a>').join('') + '</div>' : '';
-const coverNavigation = (catalogHref || alternateHref) ? '<div class="cover-navigation">' + (catalogHref ? '<a class="cover-catalog" href="' + escape(catalogHref) + '">' + escape(ui.allGuides) + '</a>' : '') + coverLanguages + '</div>' : '';
+const coverNavigation = alternateHref ? '<div class="cover-navigation">' + coverLanguages + '</div>' : '';
 const html = `<!doctype html>
 <html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title><style>${fonts}\n${styles}\n${localStyles}</style></head>
