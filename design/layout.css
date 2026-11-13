@@ -159,3 +159,13 @@ main > nav a:hover { background: #d7e9ed; }
 
 .chapter h2 { overflow-wrap: anywhere; }
 main > nav a { min-width: 0; overflow-wrap: anywhere; }
+
+/* Sprachwechsel direkt oben auf der Titelseite. */
+.cover-top { display: flex; align-items: flex-start; justify-content: space-between; gap: .5rem; padding: 0 clamp(1.5rem, 6vw, 4rem); }
+.cover-top .logo { min-width: 0; flex-shrink: 1; margin: 0; }
+.cover-languages { display: flex; gap: 6px; flex: 0 0 auto; }
+.cover-languages a { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0 8px; border: 1px solid var(--brand); border-radius: .3rem; color: var(--brand); background: white; font-size: .8rem; font-weight: 700; line-height: 1; text-decoration: none; }
+.cover-languages a[aria-current="page"] { color: white; background: var(--brand); }
+.cover-languages a:not([aria-current]):hover { background: var(--pale); }
+.cover-languages a:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+@media print { .cover-languages { display: none; } .cover-top { padding: 0 12mm; } .cover-top .logo { width: 29mm; flex: none; } }
