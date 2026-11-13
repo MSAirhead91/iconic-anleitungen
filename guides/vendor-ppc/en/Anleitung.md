@@ -1,6 +1,6 @@
 # Add a Vendor Central user for PPC
 
-Sign in to Vendor Central with your administrator account. Have the name and email address supplied by ICONIC ready. The screenshots show the German interface; the corresponding German labels are included below.
+Sign in to Vendor Central with your administrator account. Have the name and email address supplied by ICONIC ready.
 
 ## 1. Open employee management
 
