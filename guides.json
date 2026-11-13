@@ -16,5 +16,20 @@
         "source": "guides/vendor-ppc/en/Anleitung.md"
       }
     }
+  },
+  {
+    "slug": "vendor-dsp",
+    "versions": {
+      "de": {
+        "source": "guides/vendor-dsp/de/Anleitung.md",
+        "title": "Nutzer für DSP in Vendor Central hinzufügen",
+        "description": "ICONIC Zugriff für Vendor DSP mit Finanzberichten einrichten."
+      },
+      "en": {
+        "source": "guides/vendor-dsp/en/Anleitung.md",
+        "title": "Add a Vendor Central user for DSP",
+        "description": "Set up ICONIC access to financial reports for Vendor DSP."
+      }
+    }
   }
 ]

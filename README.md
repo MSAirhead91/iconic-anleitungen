@@ -9,6 +9,8 @@ Zentrale, bereinigte Kundenanleitungen mit deutscher und englischer Sprachfassun
 - [English overview](https://msairhead91.github.io/iconic-anleitungen/en/)
 - [Vendor PPC – Deutsch](https://msairhead91.github.io/iconic-anleitungen/de/vendor-ppc/)
 - [Vendor PPC – English](https://msairhead91.github.io/iconic-anleitungen/en/vendor-ppc/)
+- [Vendor DSP – Deutsch](https://msairhead91.github.io/iconic-anleitungen/de/vendor-dsp/)
+- [Vendor DSP – English](https://msairhead91.github.io/iconic-anleitungen/en/vendor-dsp/)
 
 Der bisherige Link /vendor-ppc/ bleibt als Weiterleitung zu /de/vendor-ppc/ bestehen. Abfrageparameter und Kapitelanker werden erhalten. Alle internen Links sind relativ und funktionieren auch unter einer später eingerichteten eigenen Domain.
 
@@ -24,7 +26,7 @@ Der bisherige Link /vendor-ppc/ bleibt als Weiterleitung zu /de/vendor-ppc/ best
 
 Die optionalen Titel der Markdown-Bilder dienen als stabile Darstellungsschlüssel, beispielsweise settings, employees, invitation, role und permissions. Alt-Texte sind sprachabhängig; CSS und Konturkonfiguration orientieren sich an data-shot bzw. diesen Schlüsseln.
 
-Die englische Vendor-PPC-Anleitung enthält englische Texte und Bedienelemente. Die authentischen Screenshots zeigen derzeit die deutsche Oberfläche; dies wird in der Anleitung erklärt und die deutschen UI-Bezeichnungen werden im englischen Text angegeben. Fachliche Einstellungen entsprechen der freigegebenen deutschen Fassung.
+Die englischen Vendor-PPC- und Vendor-DSP-Anleitungen enthalten englische Texte und Bedienelemente. Die authentischen Screenshots zeigen derzeit die deutsche Oberfläche; die deutschen UI-Bezeichnungen werden im englischen Text zusammen mit ihrer Bedeutung angegeben. Fachliche Einstellungen entsprechen der freigegebenen deutschen Fassung.
 
 ## Lokal erstellen und prüfen
 

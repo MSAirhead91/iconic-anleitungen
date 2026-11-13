@@ -1,0 +1,56 @@
+.chapter blockquote {
+  margin: .9rem 0;
+  padding: .8rem 1rem;
+  background: var(--pale);
+  border-left: 3px solid var(--brand);
+}
+.chapter blockquote p { margin: 0; }
+.chapter ul { padding-left: 1.4rem; }
+.chapter li { margin: .1rem 0; }
+
+.chapter img[data-shot="invitation"] {
+
+
+}
+
+
+@media print {
+  .chapter blockquote { break-inside: avoid; }
+}
+
+
+.cover-place { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem 1.5rem; flex-wrap: wrap; }
+.cover-revision { margin-left: auto; white-space: nowrap; }
+
+#abschnitt-4 blockquote {
+  position: relative;
+  margin-top: 1.25rem;
+  padding: 1rem 1.15rem 1rem 3.1rem;
+  border-left: 0;
+  border-radius: .35rem;
+  background: var(--pale);
+  break-inside: avoid;
+}
+#abschnitt-4 blockquote::before {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  left: 1.15rem;
+  width: 1.4rem;
+  height: 1lh;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M4 12 9 17 20 7' fill='none' stroke='%2319677d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") center / 1.4rem 1.4rem no-repeat;
+}
+.cover-frame > p { padding: .75rem 1rem; background: var(--pale); border-left: 3px solid var(--brand); }
+
+/* Gleiche Textgroesse: Grundschrift im Einstellungsmenue 15 px,
+   in den anderen Screenshots 18 px. Der breiteste Screenshot
+   (1392 px) bestimmt den gemeinsamen responsiven Massstab.
+   Breite = Quellbreite * (18 / Quellschriftgroesse) / 1392. */
+.chapter img:not(.print-mark) { max-height: none; }
+.chapter img[data-shot="settings"] { width: 40.344828%; }
+.chapter img[data-shot="employees"] { width: 100%; }
+.chapter img[data-shot="invitation"] { width: 88.433908%; }
+.chapter img[data-shot="role"],
+.chapter img[data-shot="permissions"] { width: 72.701149%; }
+/* Nur den Artefaktstreifen unter der vorhandenen Menuekante ausblenden. */
+.chapter img[data-shot="settings"] { object-view-box: inset(0 0 3px); }
