@@ -22,10 +22,15 @@ Danach dist/index.html fuer eine Vorschau oeffnen oder dist mit einem lokalen We
 
 ## Veroeffentlichung
 
-GitHub Settings > Pages > Build and deployment > Source: GitHub Actions. Beim erstmaligen Einrichten einmal aktivieren; eine eigene Domain ist optional und noch nicht konfiguriert.
+GitHub Settings > Pages > Build and deployment > Source: GitHub Actions. GitHub Actions ist als Quelle eingerichtet; eine eigene Domain ist optional und noch nicht konfiguriert.
 
 Push/Merge nach main startet den Workflow. Pull Requests pruefen Build und Links, veroeffentlichen aber nicht. Nur freigegebene Inhalte nach main uebernehmen. Vor einer Veroeffentlichung alle sichtbaren und eingebetteten Bildbereiche pruefen; CSS-Ausblenden entfernt keine vertraulichen Daten aus der PNG-Datei.
 
 Stabile Kundenroute: /vendor-ppc/. Dateinamen und Slugs nach dem ersten Versand nicht mehr aendern. Der Kunde erhaelt diesen direkten Link; Datumsstaende stehen in der Anleitung statt im URL. Alte Kundenlinks nicht stilllegen.
 
-Die erste Anleitung ist Vendor PPC, Stand 11/2026. Die konkrete Zieladresse wird nach erfolgreicher Pages-Einrichtung dokumentiert. Eine fehlgeschlagene oder noch laufende Bereitstellung darf nicht als veroeffentlicht bezeichnet werden.
+## Oeffentliche Links
+
+- [Alle Anleitungen](https://msairhead91.github.io/iconic-anleitungen/)
+- [Vendor PPC – Nutzer hinzufuegen](https://msairhead91.github.io/iconic-anleitungen/vendor-ppc/)
+
+Die erste Anleitung ist Vendor PPC, Stand 11/2026. Die stabilen Links koennen direkt in Kunden-E-Mails verwendet werden. Eine fehlgeschlagene oder noch laufende Bereitstellung darf nicht als veroeffentlicht bezeichnet werden.
