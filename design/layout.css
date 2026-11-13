@@ -1,0 +1,155 @@
+:root {
+  --brand: #19677d;
+  --ink: #333;
+  --pale: #eaf3f5;
+  color: var(--ink);
+  background: #f0f4f5;
+  font: 16px/1.55 Usual, Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #005e76; text-underline-offset: .18em; }
+a:focus-visible { outline: 3px solid #005e76; outline-offset: 3px; }
+.cover, main { width: min(100% - 2rem, 54rem); margin: 1.5rem auto; }
+.cover { background: white; border-radius: .35rem; padding-top: 2.3rem; }
+.logo { display: block; width: 104px; height: auto; }
+.cover > .logo { margin-left: clamp(1.5rem, 6vw, 4rem); }
+.cover-frame {
+  margin-top: clamp(3.2rem, 10vw, 7.5rem);
+  border: .85rem solid var(--brand);
+  border-top: 0;
+  padding: 0 clamp(.9rem, 4vw, 2.4rem) 2rem;
+}
+.cover-mark {
+  display: grid;
+  grid-template-columns: clamp(.45rem, 3vw, 2.1rem) auto minmax(.4rem, 1fr);
+  gap: clamp(.45rem, 1.35vw, .8rem);
+  align-items: start;
+  margin: 0 calc(-1 * clamp(.9rem, 4vw, 2.4rem));
+  color: var(--brand);
+  font: 900 clamp(2.05rem, 9vw, 6rem)/.88 "Arial Black", Usual, Arial, sans-serif;
+  letter-spacing: .015em;
+}
+.cover-mark::before, .cover-mark::after {
+  content: "";
+  display: block;
+  background: var(--brand);
+  height: .85rem;
+
+}
+.cover-mark > span { position: relative; top: -.1em; }
+.cover h1 { margin: 1.65rem 0 1rem; max-width: 25ch; font-size: clamp(1.2rem, 4.6vw, 2rem); line-height: 1.32; }
+.cover h1 span { color: white; background: #333; padding: .12em .34em; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+.cover p { width: 100%; max-width: none; }
+.cover p + p { padding: .75rem 1rem; background: var(--pale); border-left: 3px solid var(--brand); }
+.cover-place { display: block; margin-top: 2rem; font-size: .72rem; }
+nav { display: flex; flex-wrap: wrap; gap: .4rem 1rem; padding: 1rem 1.3rem; background: white; }
+nav a { font-weight: 700; }
+.chapter { background: white; padding: clamp(1rem, 4vw, 2.4rem); margin-top: 1rem; border-top: 5px solid var(--brand); }
+.chapter h2 { margin-top: 0; padding-bottom: .35rem; border-bottom: 1px solid var(--brand); color: #005e76; line-height: 1.2; }
+.chapter h3 { margin: 1.1rem 0 .3rem; line-height: 1.25; }
+.chapter p { margin: .45rem 0 .8rem; }
+.chapter img:not(.print-mark) { display: block; max-width: 100%; height: auto; margin: .8rem auto; }
+.print-mark { display: none; }
+@page { size: A4; margin: 12mm; }
+@media print {
+  :root { background: white; font-size: 10pt; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  .cover, main { width: 100%; margin: 0; }
+  .cover { padding-top: 10mm; min-height: 270mm; }
+  .cover > .logo { margin-left: 12mm; width: 29mm; }
+  .cover-frame { margin-top: 55mm; min-height: 175mm; padding-bottom: 8mm; }
+  .cover-mark { font-size: 43pt; }
+  .cover h1 { font-size: 21pt; }
+  nav { display: none; }
+  .chapter { break-before: page; margin: 0; padding: 6mm 0 0; }
+  .print-mark { display: block; width: 25mm; margin-left: auto; margin-bottom: 3mm; }
+  .chapter h2, .chapter h3 { break-after: avoid; }
+  .chapter p { orphans: 3; widows: 3; }
+  .chapter img:not(.print-mark) { max-height: 175mm; max-width: 100%; object-fit: contain; break-inside: avoid; }
+  .chapter:has(h3 ~ h3) img:not(.print-mark) { max-height: 94mm; }
+}
+
+
+.chapter h2 a { color: inherit; text-decoration: none; }
+.chapter h2 a:hover { text-decoration: underline; }
+
+/* Screenshot-Vergroesserung: gemeinsame Bildskalierung bleibt in der Anleitung. */
+.screenshot-link { display: block; position: relative; cursor: zoom-in; }
+.image-viewer-open { overflow: hidden; }
+.screenshot-viewer {
+  width: calc(100vw - 1rem); max-width: 96rem;
+  height: calc(100vh - 1rem); height: calc(100dvh - 1rem); max-height: none;
+  padding: 0; border: 0; border-radius: .4rem; color: var(--ink); background: #fff;
+}
+.screenshot-viewer::backdrop { background: rgb(0 20 28 / .78); }
+.viewer-shell { display: flex; flex-direction: column; height: 100%; min-width: 0; }
+.viewer-header { padding: .65rem .8rem; border-bottom: 1px solid #c8dce1; background: var(--pale); flex: 0 0 auto; }
+.viewer-header p { margin: 0 0 .45rem; font-size: .9rem; font-weight: 700; overflow-wrap: anywhere; }
+.viewer-tools { display: flex; flex-wrap: wrap; align-items: center; gap: .4rem; }
+.viewer-tools button { min-width: 44px; min-height: 44px; padding: .4rem .7rem; border: 1px solid var(--brand); border-radius: .3rem; background: white; color: #005e76; font: inherit; cursor: pointer; }
+.viewer-tools button:hover { background: #dcecf0; }
+.viewer-tools button:focus-visible, .viewer-viewport:focus-visible { outline: 3px solid var(--brand); outline-offset: -3px; }
+.viewer-tools button:disabled { opacity: .45; cursor: default; }
+.viewer-tools output { min-width: 4.3ch; text-align: center; font-size: .85rem; }
+.viewer-tools [data-viewer="close"] { margin-left: auto; background: var(--brand); color: white; }
+.viewer-viewport { flex: 1 1 auto; min-height: 0; overflow: auto; touch-action: pan-x pan-y pinch-zoom; overscroll-behavior: contain; background: #e1e9eb; }
+.viewer-surface { width: max-content; min-width: 100%; padding: 16px; }
+.viewer-image { display: block; max-width: none; max-height: none; height: auto; margin: 0 auto; background: white; }
+@media print {
+  .screenshot-viewer { display: none !important; }
+  .image-viewer-open { overflow: visible; }
+  .screenshot-link { color: inherit; text-decoration: none; }
+}
+.viewer-header .viewer-help { margin: .45rem 0 0; font-size: .78rem; font-weight: 400; }
+
+
+.screenshot-outline { position: absolute; pointer-events: none; fill: none; stroke: #bec8cd; stroke-width: 1; }
+@media print { .screenshot-outline { display: none !important; } }
+
+
+
+/* Kompakte, belastbare Werkzeugleiste auch bei schmalen Bildschirmbreiten. */
+.viewer-header { padding: 10px; max-height: 45%; overflow-y: auto; font-size: 14px; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+.viewer-heading { display: grid; grid-template-columns: minmax(0, 1fr) 44px; gap: 8px; align-items: start; margin-bottom: 6px; }
+.viewer-heading #screenshot-viewer-title { min-width: 0; margin: 0; font-size: 14px; line-height: 1.35; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
+.viewer-close { display: grid; place-items: center; width: 44px; height: 44px; min-width: 44px; padding: 0; border: 1px solid var(--brand); border-radius: 5px; color: #fff; background: var(--brand); cursor: pointer; }
+.viewer-close svg { width: 20px; height: 20px; stroke: currentColor; stroke-width: 2; fill: none; }
+.viewer-close:focus-visible { outline: 3px solid #005e76; outline-offset: 2px; }
+.viewer-tools { display: flex; flex-wrap: wrap; gap: 8px 12px; align-items: center; }
+.viewer-tools button { width: auto; max-width: 100%; min-width: 44px; min-height: 44px; padding: 6px 10px; font: 14px/1.2 Usual, Arial, sans-serif; white-space: normal; overflow-wrap: anywhere; }
+.viewer-tools [data-viewer="in"], .viewer-tools [data-viewer="out"] { font-size: 18px; }
+.viewer-tools output { min-width: 0; font-size: 14px; line-height: 1.2; overflow-wrap: anywhere; }
+.viewer-header .viewer-help { margin: 6px 0 0; font-size: 12px; line-height: 1.3; }
+@media (max-height: 450px) {
+  .viewer-header { padding: 6px 10px; }
+  .viewer-header .viewer-help { display: none; }
+  .viewer-heading #screenshot-viewer-title { -webkit-line-clamp: 1; }
+}
+/* Keine Symbole oder Hinweiszeilen: Interaktion erst bei Hover/Fokus. */
+.screenshot-link:focus-visible { outline: none; }
+.screenshot-link:focus-visible img { outline: 2px solid var(--brand); outline-offset: 3px; box-shadow: 0 2px 10px rgb(25 103 125 / .16); }
+@media (hover: hover) and (pointer: fine) {
+  .screenshot-link:hover img { outline: 1px solid rgb(25 103 125 / .65); outline-offset: 3px; box-shadow: 0 2px 10px rgb(25 103 125 / .16); }
+}
+.screenshot-link:active img { outline: 1px solid var(--brand); outline-offset: 2px; }
+@media print { .screenshot-link img { outline: none !important; box-shadow: none !important; } }
+
+.viewer-zoom-group { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; max-width: 100%; }
+.viewer-zoom-group button { width: 44px; flex: 0 0 44px; padding: 5px; }
+.viewer-zoom-group output { width: 5.5ch; min-width: 52px; flex: 0 0 auto; white-space: nowrap; }
+.viewer-fit-group { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; flex: 0 1 auto; min-width: 0; max-width: 100%; }
+.viewer-fit-group button { flex: 0 1 auto; }
+
+/* Anpassungsbuttons bevorzugt in derselben Zeile wie der kompakte Zoomblock. */
+.viewer-tools { align-items: stretch; column-gap: 6px; }
+.viewer-zoom-group { align-items: stretch; }
+.viewer-zoom-group output { align-self: center; }
+.viewer-fit-group { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; flex: 1 1 120px; max-width: 340px; }
+.viewer-fit-group button { min-height: 44px; }
+@media (max-width: 480px) { .viewer-fit-group button { font-size: 12px; padding: 4px; } }
+
+/* Inhaltsverzeichnis nach der freigegebenen Codex-/GitHub-Referenz. */
+nav[aria-label="Inhalt"] { gap: .45rem; border-radius: .35rem; }
+nav[aria-label="Inhalt"] a { flex: 1 1 245px; padding: .65rem .8rem; background: var(--pale); border-radius: .25rem; text-decoration: none; font-size: .9rem; }
+nav[aria-label="Inhalt"] a:hover { background: #d7e9ed; }
