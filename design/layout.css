@@ -11,8 +11,9 @@ body { margin: 0; }
 a { color: #005e76; text-underline-offset: .18em; }
 a:focus-visible { outline: 3px solid #005e76; outline-offset: 3px; }
 .cover, main { width: min(100% - 2rem, 54rem); margin: 1.5rem auto; }
-.cover { background: white; border-radius: .35rem; padding-top: 2.3rem; }
+.cover { margin-bottom: 1rem; background: white; border-radius: .35rem; padding-top: 2.3rem; }
 .logo { display: block; width: 104px; height: auto; }
+main { margin-top: 1rem; }
 .cover > .logo { margin-left: clamp(1.5rem, 6vw, 4rem); }
 .cover-frame {
   margin-top: clamp(3.2rem, 10vw, 7.5rem);
