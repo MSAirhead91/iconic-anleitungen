@@ -86,15 +86,15 @@ const title = escape(titleToken.text);
 const nav = chapters.map(({ label }, index) => '<a href="#abschnitt-' + (index+1) + '">' + escape(label) + '</a>').join("");
 const sections = chapters.map(({ label, tokens }, index) => '<section class="chapter" id="abschnitt-' + (index+1)
   + '"><img class="print-mark" src="' + logoUrl + '" alt=""><h2><a href="#titelseite" title="' + escape(ui.back) + '">' + escape(label) + '</a></h2>' + render(tokens) + '</section>').join("\n");
-const guideLinks = (alternateHref || catalogHref) ? '<div class="guide-links" role="navigation" aria-label="' + escape(ui.languages) + '">' + (catalogHref ? '<a href="' + escape(catalogHref) + '">' + escape(ui.allGuides) + '</a>' : '') + (alternateHref ? '<a href="' + escape(alternateHref) + '" lang="' + ui.otherLocale + '" hreflang="' + ui.otherLocale + '">' + escape(ui.otherName) + '</a>' : '') + '</div>' : '';
 const coverLanguages = alternateHref ? '<div class="cover-languages" role="navigation" aria-label="' + escape(ui.languages) + '">' + ['de', 'en'].map(code => '<a href="' + escape(code === locale ? '#titelseite' : alternateHref) + '" lang="' + code + '" hreflang="' + code + '" aria-label="' + (code === 'de' ? 'Deutsch' : 'English') + '"' + (code === locale ? ' aria-current="page"' : '') + '>' + code.toUpperCase() + '</a>').join('') + '</div>' : '';
+const coverNavigation = (catalogHref || alternateHref) ? '<div class="cover-navigation">' + (catalogHref ? '<a class="cover-catalog" href="' + escape(catalogHref) + '">' + escape(ui.allGuides) + '</a>' : '') + coverLanguages + '</div>' : '';
 const html = `<!doctype html>
 <html lang="${locale}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${title}</title><style>${fonts}\n${styles}\n${localStyles}</style></head>
-<body><header class="cover" id="titelseite"><div class="cover-top"><img class="logo" src="${logoUrl}" alt="ICONIC SALES">${coverLanguages}</div>
+<body><header class="cover" id="titelseite"><div class="cover-top"><img class="logo" src="${logoUrl}" alt="ICONIC SALES">${coverNavigation}</div>
 <div class="cover-frame"><div class="cover-mark" aria-hidden="true"> <span>ICONIC<br>INFO</span></div>
 <h1><span>${title}</span></h1>
 ${render(intro)}<small class="cover-place"><span>STUTTGART | LONDON</span>${revision ? `<span class="cover-revision">${escape(ui.revision)}: ${escape(revision)}</span>` : ""}</small></div></header>
-<main>${guideLinks}<nav aria-label="${escape(ui.contents)}">${nav}</nav>${sections}</main>${viewerHtml}<script>${viewerScript}</script></body></html>\n`;
+<main><nav aria-label="${escape(ui.contents)}">${nav}</nav>${sections}</main>${viewerHtml}<script>${viewerScript}</script></body></html>\n`;
 await fs.writeFile(output, html, "utf8");
 
